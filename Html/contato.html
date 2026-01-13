@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | WebStudio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="../css/contato/contato.css">
+</head>
+<body>
+
+    <header id="main-header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">W</div>
+                    <span class="logo-text">WebStudio</span>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html">Home</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="portfolio.html">Portfólio</a>
+                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                </nav>
+
+                <div class="header-cta">
+                    <a href="contato.html" class="btn btn-amber">Falar com Especialista</a>
+                </div>
+
+                <button class="mobile-toggle" id="menuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <div class="logo">
+                <div class="logo-icon gradient-indigo">W</div>
+                <span class="logo-text text-dark">WebStudio</span>
+            </div>
+            <button class="close-btn" id="closeMenuBtn"><i data-lucide="x"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="portfolio.html">Portfólio</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="blog.html">Blog</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="mobile-footer">
+            <a href="contato.html" class="btn btn-amber full-width">Falar com Especialista</a>
+        </div>
+    </div>
+
+    <main>
+        <div id="success-screen" class="success-screen hidden">
+            <div class="success-content reveal-on-load">
+                <div class="success-icon-box">
+                    <i data-lucide="check-circle-2"></i>
+                </div>
+                <h2>Mensagem Enviada!</h2>
+                <p>Recebemos sua mensagem e entraremos em contato em até 24 horas úteis.</p>
+                <button id="new-msg-btn" class="btn btn-indigo">Enviar Nova Mensagem</button>
+            </div>
+        </div>
+
+        <div id="main-contact-content">
+            
+            <section class="hero-section">
+                <div class="container text-center">
+                    <div class="hero-wrapper">
+                        <span class="hero-tag reveal-element delay-1">Contato</span>
+                        <h1 class="reveal-element delay-2">Vamos Criar Algo <br><span class="text-gradient-indigo">Incrível Juntos</span></h1>
+                        <p class="reveal-element delay-3">Preencha o formulário e nossa equipe entrará em contato em até 24 horas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="container">
+                    <div class="contact-grid">
+                        
+                        <div class="info-column">
+                            <h2 class="column-title">Informações de Contato</h2>
+                            
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <div class="icon-box bg-indigo"><i data-lucide="map-pin"></i></div>
+                                    <div>
+                                        <h3>Endereço</h3>
+                                        <p>Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, 01310-100</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="icon-box bg-indigo"><i data-lucide="phone"></i></div>
+                                    <div>
+                                        <h3>Telefone</h3>
+                                        <a href="tel:+5511999999999">(11) 99999-9999</a>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="icon-box bg-indigo"><i data-lucide="mail"></i></div>
+                                    <div>
+                                        <h3>E-mail</h3>
+                                        <a href="mailto:contato@webstudio.com.br">contato@webstudio.com.br</a>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="icon-box bg-emerald"><i data-lucide="message-circle"></i></div>
+                                    <div>
+                                        <h3>WhatsApp</h3>
+                                        <a href="https://wa.me/5511999999999" target="_blank" class="link-emerald">(11) 99999-9999</a>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="icon-box bg-amber"><i data-lucide="clock"></i></div>
+                                    <div>
+                                        <h3>Horário</h3>
+                                        <p>Segunda a Sexta<br>9h às 18h</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.148943247078!2d-46.654967!3d-23.563099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1689624584568!5m2!1spt-BR!2sbr" 
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <div class="form-column">
+                            <div class="form-card">
+                                <h2 class="form-title">Solicite seu Orçamento</h2>
+                                <p class="form-desc">Preencha os campos abaixo e retornaremos em breve.</p>
+
+                                <form id="contactForm" class="contact-form">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="name">Nome Completo *</label>
+                                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">E-mail *</label>
+                                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="phone">WhatsApp / Telefone</label>
+                                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="company">Empresa</label>
+                                            <input type="text" id="company" name="company" placeholder="Nome da sua empresa">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="service_interest">Serviço de Interesse</label>
+                                            <div class="select-wrapper">
+                                                <select id="service_interest" name="service_interest">
+                                                    <option value="" disabled selected>Selecione um serviço</option>
+                                                    <option value="landing_page">Landing Page</option>
+                                                    <option value="site_institucional">Site Institucional</option>
+                                                    <option value="ecommerce">E-commerce</option>
+                                                    <option value="sistema_web">Sistema Web</option>
+                                                    <option value="manutencao">Manutenção</option>
+                                                    <option value="diagnostico">Diagnóstico Gratuito</option>
+                                                </select>
+                                                <i data-lucide="chevron-down" class="select-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="budget_range">Faixa de Investimento</label>
+                                            <div class="select-wrapper">
+                                                <select id="budget_range" name="budget_range">
+                                                    <option value="" disabled selected>Selecione uma faixa</option>
+                                                    <option value="ate_3k">Até R$ 3.000</option>
+                                                    <option value="3k_8k">R$ 3.000 - R$ 8.000</option>
+                                                    <option value="8k_15k">R$ 8.000 - R$ 15.000</option>
+                                                    <option value="acima_15k">Acima de R$ 15.000</option>
+                                                </select>
+                                                <i data-lucide="chevron-down" class="select-icon"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="project_description">Conte-nos sobre seu Projeto</label>
+                                        <textarea id="project_description" name="project_description" rows="5" placeholder="Descreva brevemente o que você precisa..."></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-indigo-submit" id="submitBtn">
+                                        <span class="btn-text">Enviar Mensagem</span>
+                                        <i data-lucide="send" class="btn-icon"></i>
+                                        <i data-lucide="loader-2" class="btn-loader hidden"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <div class="logo-icon footer-icon-bg">W</div>
+                        <span class="logo-text text-white">WebStudio</span>
+                    </a>
+                    <p class="footer-desc">
+                        Transformamos ideias em experiências digitais excepcionais. Design impecável, código blindado, resultados reais.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="servicos.html">Landing Pages</a></li>
+                        <li><a href="servicos.html">Sites Institucionais</a></li>
+                        <li><a href="servicos.html">E-commerce</a></li>
+                        <li><a href="servicos.html">Sistemas Web</a></li>
+                        <li><a href="servicos.html">Manutenção</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span>Av. Paulista, 1000 - SP</span>
+                        </li>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+5511999999999">(11) 99999-9999</a>
+                        </li>
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:contato@webstudio.com.br">contato@webstudio.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-wrapper">
+                <p>© 2026 WebStudio. Todos os direitos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+                <button id="scrollToTop" class="scroll-top-btn"><i data-lucide="arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/contato.js"></script>
+</body>
+</html>

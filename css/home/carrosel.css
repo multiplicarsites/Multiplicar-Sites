@@ -1,0 +1,344 @@
+/* =========================================
+   PARALLAX CAROUSEL STYLES
+   ========================================= */
+
+/* Section Setup */
+.parallax-section {
+    position: relative;
+    padding: 6rem 1.5rem;
+    /* Fundo escuro conforme o design original */
+    background:  #020617;
+    color: white;
+    overflow: hidden;
+}
+
+.parallax-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dourado {
+    color: var(--amber-500) !important;
+}
+
+/* Header */
+.parallax-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.parallax-tag {
+    display: block;
+    color: var(--amber-400);
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.parallax-title {
+    font-size: clamp(2rem, 5vw, 3rem); /* text-4xl md:text-5xl */
+    font-weight: 200; /* font-extralight */
+    letter-spacing: 0.025em;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.parallax-desc {
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 28rem;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Carousel Main Wrapper */
+.parallax-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 72rem; /* max-w-6xl */
+    /* Aspect Ratio 21/9 fallback height */
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@supports (aspect-ratio: 21/9) {
+    .parallax-carousel {
+        height: auto;
+        aspect-ratio: 21 / 9;
+    }
+}
+
+/* Slides Wrapper */
+.parallax-slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 0.8s; /* Delay visibility change */
+    overflow: hidden; /* Important for masking parallax */
+}
+
+.parallax-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s 0s;
+    z-index: 5;
+}
+
+/* Background Image & Overlay */
+.parallax-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1); /* Base scale */
+    transition: transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.parallax-slide.active .parallax-bg-wrapper {
+    transform: scale(1);
+}
+
+.parallax-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Parallax Effect Logic via transform handled in animation classes below */
+}
+
+.parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3), transparent);
+}
+
+/* Slide Content (Text) */
+.parallax-content {
+    position: absolute;
+    left: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 500px;
+}
+
+@media (min-width: 768px) {
+    .parallax-content { left: 5rem; }
+}
+
+.slide-subtitle {
+    color: var(--amber-400);
+    font-size: 0.875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.slide-title {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 200;
+    color: white;
+    letter-spacing: 0.025em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.slide-line {
+    width: 6rem;
+    height: 2px;
+    background-color: var(--amber-400);
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+/* Content Animations (Active State) */
+.parallax-slide.active .slide-subtitle {
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.parallax-slide.active .slide-title {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.parallax-slide.active .slide-line {
+    animation: scaleInX 0.5s ease-out 0.5s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleInX {
+    to { transform: scaleX(1); }
+}
+
+/* Transition Logic for Parallax Direction */
+/* RIGHT TO LEFT (Next) */
+.parallax-slide.enter-next .parallax-bg-wrapper {
+    animation: slideBgNext 0.8s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+.parallax-slide.exit-next .parallax-bg-wrapper {
+    animation: slideBgExitNext 0.8s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* LEFT TO RIGHT (Prev) */
+.parallax-slide.enter-prev .parallax-bg-wrapper {
+    animation: slideBgPrev 0.8s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+.parallax-slide.exit-prev .parallax-bg-wrapper {
+    animation: slideBgExitPrev 0.8s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* Keyframes for BG Parallax */
+@keyframes slideBgNext {
+    from { transform: translateX(100%) scale(1.2); }
+    to { transform: translateX(0) scale(1); }
+}
+@keyframes slideBgExitNext {
+    from { transform: translateX(0) scale(1); opacity: 1; }
+    to { transform: translateX(-30%) scale(1.1); opacity: 0; }
+}
+
+@keyframes slideBgPrev {
+    from { transform: translateX(-100%) scale(1.2); }
+    to { transform: translateX(0) scale(1); }
+}
+@keyframes slideBgExitPrev {
+    from { transform: translateX(0) scale(1); opacity: 1; }
+    to { transform: translateX(30%) scale(1.1); opacity: 0; }
+}
+
+/* Text Parallax Animations */
+.parallax-slide.enter-next .parallax-content { animation: slideTextNext 0.6s ease-out 0.1s forwards; }
+.parallax-slide.exit-next .parallax-content { animation: slideTextExitNext 0.6s ease-in forwards; }
+
+.parallax-slide.enter-prev .parallax-content { animation: slideTextPrev 0.6s ease-out 0.1s forwards; }
+.parallax-slide.exit-prev .parallax-content { animation: slideTextExitPrev 0.6s ease-in forwards; }
+
+@keyframes slideTextNext {
+    from { transform: translateX(200px) translateY(-50%); opacity: 0; }
+    to { transform: translateX(0) translateY(-50%); opacity: 1; }
+}
+@keyframes slideTextExitNext {
+    from { transform: translateX(0) translateY(-50%); opacity: 1; }
+    to { transform: translateX(-100px) translateY(-50%); opacity: 0; }
+}
+
+@keyframes slideTextPrev {
+    from { transform: translateX(-200px) translateY(-50%); opacity: 0; }
+    to { transform: translateX(0) translateY(-50%); opacity: 1; }
+}
+@keyframes slideTextExitPrev {
+    from { transform: translateX(0) translateY(-50%); opacity: 1; }
+    to { transform: translateX(100px) translateY(-50%); opacity: 0; }
+}
+
+
+/* Controls */
+.parallax-controls {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--amber-400);
+}
+
+.slide-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 300;
+}
+
+#current-slide { font-size: 1.5rem; color: white; }
+.counter-divider { color: rgba(255, 255, 255, 0.3); }
+#total-slides { font-size: 0.875rem; color: rgba(255, 255, 255, 0.5); }
+
+/* Indicators */
+.parallax-indicators {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.indicator-dot {
+    width: 2px;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.indicator-dot:hover { background-color: rgba(255, 255, 255, 0.6); }
+
+.indicator-dot.active {
+    height: 2rem;
+    background-color: var(--amber-400);
+}
+
+/* Feature Tags */
+.parallax-tags {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.feature-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}

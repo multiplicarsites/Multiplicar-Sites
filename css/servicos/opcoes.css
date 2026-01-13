@@ -1,0 +1,206 @@
+/* --- LAYOUT STICKY --- */
+
+/* Container Principal */
+.services-layout-sticky {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Coluna Esquerda (Scroll) */
+.scroll-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    padding-bottom: 100px;
+}
+
+/* Wrapper do Card para animação */
+.sticky-card {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+.sticky-card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Número Decorativo */
+.card-number {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 8rem;
+    font-weight: 800;
+    color: rgba(0,0,0,0.05);
+    z-index: -1;
+    line-height: 1;
+}
+
+/* Coluna Direita (Sticky) */
+.sticky-column {
+    width: 45%;
+    position: relative;
+}
+
+.sticky-content-wrapper {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: calc(100vh - 140px);
+}
+
+/* Título Sticky */
+.sticky-column h2 {
+    color: white;
+    font-size: 3.4rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.separator-line {
+    width: 80px;
+    height: 4px;
+    background: var(--amber-500);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+
+.sticky-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    opacity: 0.6;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--slate-600);
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--slate-300);
+}
+
+/* ========================= */
+/* APARÊNCIA DOS SERVICE CARDS */
+/* ========================= */
+
+.service-card {
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    padding: 2rem;
+    color: #000000;
+}
+
+/* Mantém as classes antigas sem quebrar */
+.service-card.purple,
+.service-card.blue,
+.service-card.emerald {
+    background: #ffffff;
+    border: 2px solid #000000;
+}
+
+/* Ícone */
+.service-card .card-icon {
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+/* Título */
+.service-card h3 {
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Texto */
+.service-card p {
+    color: #000000;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Link */
+.service-card .learn-more {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Hover – apenas o título */
+.service-card:hover h3   {
+    color: #d4af37;
+}
+
+.learn-more:hover {
+    color: #d4af37;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 900px) {
+    .services-layout-sticky {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .scroll-column,
+    .sticky-column {
+        width: 100%;
+    }
+
+    .sticky-content-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    .scroll-column {
+        gap: 40px;
+    }
+
+    .card-number {
+        font-size: 5rem;
+        top: -20px;
+    }
+}
+
+
+.douradinho2 {
+    color: var(--amber-500);
+}
+
+.direita {
+    color: white !important;
+}

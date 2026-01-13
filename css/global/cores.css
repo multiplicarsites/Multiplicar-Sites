@@ -1,0 +1,100 @@
+
+
+:root {
+    /* Paleta de Cores Exata do Tailwind */
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a; /* Cor escura principal */
+    --slate-950: #020617; /* Cor mais escura (fundos) */
+
+    --blue-900: #1e3a8a;
+    --blue-20: #20449f;
+    --blue-17: #096da6;
+
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    
+    --yellow-400: #facc15;
+    --yellow-500: #eab308;
+    --yellow-600: #ca8a04;
+
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-400: #34d399;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    
+    --violet-500: #8b5cf6;
+    --violet-600: #7c3aed;
+
+    
+
+    /* Gradientes Comuns */
+    --grad-amber: linear-gradient(to right, var(--amber-500), var(--yellow-600));
+    --grad-amber-hover: linear-gradient(to right, var(--amber-400), var(--yellow-500));
+}
+
+
+:root {
+    --slate-950: #020617;
+    --slate-900: #0f172a;
+    --slate-600: #475569;
+    --slate-200: #e2e8f0;
+    --slate-50: #f8fafc;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --emerald-500: #10b981;
+    --violet-600: #7c3aed;
+    --indigo-600: #4f46e5;
+    --red-500: #ef4444;
+}
+
+body {
+    background-color: #020617; 
+}
+
+:root {
+    /* Colors - Slate Palette */
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
+
+    /* Colors - Brand (Amber) */
+    --amber-50: #fffbeb;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+
+    /* Colors - Accent (Indigo/Violet) */
+    --indigo-50: #eef2ff;
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    --violet-600: #7c3aed;
+
+    /* Common */
+    --white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+    
+    /* Layout */
+    --container-padding: 1.5rem;
+    --max-width: 1280px;
+    --header-height: 5rem;
+}

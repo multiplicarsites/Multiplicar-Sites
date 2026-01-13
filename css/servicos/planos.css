@@ -1,0 +1,97 @@
+/* --- PRICING CARDS --- */
+.price-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 25px; 
+    margin-top: 40px; 
+}
+
+.price-card { 
+    background: white; 
+    border: 2px solid var(--slate-200); 
+    padding: 30px; 
+    border-radius: 20px; 
+    position: relative; 
+    transition: 0.3s; 
+}
+
+.price-card.featured { 
+    border-color: var(--amber-500); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    transform: scale(1.05); 
+}
+
+.popular-tag { 
+    position: absolute; 
+    top: 0; right: 0; 
+    background: var(--amber-500); 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    padding: 5px 12px; 
+    border-radius: 0 0 0 10px; 
+}
+
+.p-icon-box { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    margin-bottom: 20px; 
+}
+
+.purple { 
+    background: var(--violet-600); 
+}
+
+.blue { 
+    background: var(--indigo-600); 
+}
+
+.p-amount { 
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    margin: 15px 0; 
+}
+
+.p-amount span { 
+    font-size: 0.9rem; 
+    color: var(--slate-600); 
+    font-weight: 400; 
+}
+
+.p-list { 
+    list-style: none; 
+    margin-bottom: 30px; 
+}
+
+.p-list li { 
+    font-size: 0.9rem; 
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.p-list i { 
+    color: var(--emerald-500); 
+    width: 16px; 
+}
+
+.p-btn { 
+    display: block; 
+    text-align: center;
+    padding: 12px; 
+    background: var(--slate-200);
+    text-decoration: none; 
+    color: var(--slate-900); 
+    font-weight: 600; 
+    border-radius: 10px; 
+}
+
+.p-btn-amber { 
+    background: var(--amber-500); 
+    color: white; 
+}

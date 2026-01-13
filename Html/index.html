@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio | Design Impecável, Código Blindado</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="../css/home/style.css">
+</head>
+<body>
+
+   <header id="main-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">:0</div>
+                <h1>Multiplicar sites</h1>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html">Home</a>
+                <a href="servicos.html" class="active">Serviços</a>
+                <a href="sobre.html">Sobre nós</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html" class="btn-cta-small">Fale conosco</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuBtn"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo" style="color: var(--slate-900)">
+                    <div class="logo-icon">W</div>
+                    <span>WebStudio</span>
+                </div>
+                <button id="closeMenuBtn"><i data-lucide="x"></i></button>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#garantia">Garantia</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="#contato" class="btn-primary" style="width: 100%; justify-content: center;">Falar com Especialista</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" id="home">
+  <div class="grid-overlay"></div>
+
+  <div class="hero-wrapper">
+    
+    <!-- TEXTO -->
+    <div class="hero-text">
+      <h1>
+        Design Impecável,<br>
+        <span class="gradient-text">Código Blindado.</span>
+      </h1>
+
+      <p>
+        Sites que não quebram e carregam instantaneamente.
+        Transformamos sua presença digital em uma máquina de conversão.
+      </p>
+
+      <div class="hero-btns">
+        <a href="contato" class="botao">
+          Solicite seu Orçamento
+        </a>
+      </div>
+    </div>
+
+    <!-- IMAGEM -->
+    <div class="hero-image">
+      <img src="../foto/1 de Julho de 2025.jpg" alt="site">
+    </div>
+
+  </div>
+
+  <div class="hero-fade-bottom"></div>
+</section>
+
+
+        <section id="parallax-slider-section" class="parallax-section">
+            <div class="parallax-container">
+                <div class="parallax-header text-center">
+                    <h2 class="parallax-title">Alguns dos nossos <div class="dourado"> Trabalhos.</div></h2>
+                    
+                </div>
+
+                <div class="parallax-carousel" id="parallax-carousel">
+                    
+                    <div class="parallax-slides-wrapper">
+                        <div class="parallax-slide active" data-index="0">
+                            <div class="parallax-bg-wrapper">
+                                <img src="../foto/ALOMNESIA.png" alt="Pico Nevado" class="parallax-bg">
+                                <div class="parallax-overlay"></div>
+                            </div>
+                            <div class="parallax-content">
+                                <p class="slide-subtitle">Audivisual</p>
+                                <h3 class="slide-title">Alomnésia Filmes</h3>
+                                <div class="slide-line"></div>
+                            </div>
+                        </div>
+
+                        <div class="parallax-slide" data-index="1">
+                            <div class="parallax-bg-wrapper">
+                                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200" alt="Noite Estrelada" class="parallax-bg">
+                                <div class="parallax-overlay"></div>
+                            </div>
+                            <div class="parallax-content">
+                                <p class="slide-subtitle">Industria</p>
+                                <h3 class="slide-title">Fijihara</h3>
+                                <div class="slide-line"></div>
+                            </div>
+                        </div>
+
+                        <div class="parallax-slide" data-index="2">
+                            <div class="parallax-bg-wrapper">
+                                <img src="../foto/desperte hj.jpeg" alt="Aurora Boreal" class="parallax-bg">
+                                <div class="parallax-overlay"></div>
+                            </div>
+                            <div class="parallax-content">
+                                <p class="slide-subtitle">Método terapeutico</p>
+                                <h3 class="slide-title">Desperte Hoje</h3>
+                                <div class="slide-line"></div>
+                            </div>
+                        </div>
+
+                        <div class="parallax-slide" data-index="3">
+                            <div class="parallax-bg-wrapper">
+                                <img src="../foto/apresentacao.jpeg" alt="Cachoeira" class="parallax-bg">
+                                <div class="parallax-overlay"></div>
+                            </div>
+                            <div class="parallax-content">
+                                <p class="slide-subtitle">Portfólio</p>
+                                <h3 class="slide-title">Portfólio Estudantil</h3>
+                                <div class="slide-line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="parallax-controls">
+                        <button class="control-btn prev" id="parallax-prev">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <div class="slide-counter">
+                            <span id="current-slide">01</span>
+                            <span class="counter-divider">/</span>
+                            <span id="total-slides">04</span>
+                        </div>
+                        <button class="control-btn next" id="parallax-next">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="parallax-indicators" id="parallax-indicators">
+                        <button class="indicator-dot active" data-index="0"></button>
+                        <button class="indicator-dot" data-index="1"></button>
+                        <button class="indicator-dot" data-index="2"></button>
+                        <button class="indicator-dot" data-index="3"></button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-light bg-alt" id="depoimentos">
+  <div class="container">
+    <div class="titulo2">
+      <h2>O Que Nossos Clientes <span class="titulop">Dizem</span></h2>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal-scroll">
+        <div class="quote-icon"><i data-lucide="quote"></i></div>
+        <div class="stars">
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+        </div>
+        <p>"Nosso site antigo era lento. Em 30 dias tínhamos uma plataforma que aumentou nossas conversões em 340%."</p>
+        <div class="author">
+          <img src="https://i.pravatar.cc/150?u=1" alt="Ricardo">
+          <div>
+            <h4>Ricardo Mendes</h4>
+            <span>CEO, TechFlow Solutions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal-scroll">
+        <div class="quote-icon"><i data-lucide="quote"></i></div>
+        <div class="stars">
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+        </div>
+        <p>"Nosso site antigo era lento. Em 30 dias tínhamos uma plataforma que aumentou nossas conversões em 340%."</p>
+        <div class="author">
+          <img src="https://i.pravatar.cc/150?u=2" alt="Ricardo">
+          <div>
+            <h4>Ricardo Mendes</h4>
+            <span>CEO, TechFlow Solutions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal-scroll">
+        <div class="quote-icon"><i data-lucide="quote"></i></div>
+        <div class="stars">
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+          <i data-lucide="star" class="fill"></i>
+        </div>
+        <p>"Nosso site antigo era lento. Em 30 dias tínhamos uma plataforma que aumentou nossas conversões em 340%."</p>
+        <div class="author">
+          <img src="https://i.pravatar.cc/150?u=3" alt="Ricardo">
+          <div>
+            <h4>Ricardo Mendes</h4>
+            <span>CEO, TechFlow Solutions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+        <section class="section-light" id="garantia">
+            <div class="container">
+                <div >
+                    <h2 class="titulo3">Garantias que Trazem <span class="titulospan">Tranquilidade</span></h2>
+                    <p class="titulozinho">Investir em um site é uma decisão importante. Por isso, oferecemos garantias reais.</p>
+                </div>
+
+                <div class="guarantee-grid">
+                    <div class="guarantee-item reveal-scroll">
+                        <div class="guarantee-icon"><i data-lucide="shield"></i></div>
+                        <div>
+                            <h3>Garantia de 30 Dias</h3>
+                            <p>Se você não ficar satisfeito nos primeiros 30 dias, devolvemos seu investimento.</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item reveal-scroll">
+                        <div class="guarantee-icon"><i data-lucide="clock"></i></div>
+                        <div>
+                            <h3>Prazo Garantido</h3>
+                            <p>Entregamos no prazo combinado ou você recebe 20% de desconto.</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item reveal-scroll">
+                        <div class="guarantee-icon"><i data-lucide="check-circle-2"></i></div>
+                        <div>
+                            <h3>Código Seu</h3>
+                            <p>Todo o código-fonte é seu. Sem amarras ou dependências.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-badge reveal-scroll">
+                    <div class="trust-badge-inner">
+                        <i data-lucide="shield"></i>
+                        <div class="trust-badge-text">
+                            <strong>100% Livre de Riscos</strong>
+                            <p>Seu investimento está protegido por nossas garantias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contato">
+            <div class="cta-blobs">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+            <div class="container text-center reveal-scroll">
+                <h2>Pronto para Transformar seu Negócio Digital?</h2>
+                <p>Solicite um orçamento gratuito e descubra como podemos criar a presença digital perfeita para sua empresa.</p>
+                
+                <div class="cta-btns">
+                    <a href="#" class="btn-amber">Pedir Orçamento Agora <i data-lucide="arrow-right"></i></a>
+                    <a href="#" class="btn-outline-white">Diagnóstico Gratuito</a>
+                </div>
+
+                <div class="contact-info">
+                    <a href="tel:+5511974962380" class="phone-link"><i data-lucide="phone"></i> (11) 97496-2380</a>
+                    <a href="mailto:contato@webstudio.com.br" class="email-link"><i data-lucide="mail"></i> contato@webstudio.com.br</a>
+                    <a href="https://wa.me/5511974962380" target="_blank" class="whatsapp-link"><i data-lucide="message-circle"></i> WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+
+    <hr class="full-line">
+
+    <div class="container footer-padding">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Home" class="logo footer-logo">
+                    <div class="logo-icon">:0</div>
+                    <span>Multiplicar sites</span>
+                </a>
+                <p class="footer-description">
+                    Levamos o seu negócio para o mundo com sites rápidos, funcionais e feitos por pessoas que pensam como usuários.
+                </p>
+                
+            </div>
+
+            <div class="footer-nav">
+                <h3>Serviços</h3>
+                <ul>
+                    <li><a href="./servicos.html">Landing Pages</a></li>
+                    <li><a href="./servicos.html">Sites Institucionais</a></li>
+                    <li><a href="./servicos.html">Manutenção</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./sobre.html">Sobre Nós</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <ul>
+                  
+                    <li>
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+5511974962380">(11) 97496-2380</a>
+                    </li>
+                    <li>
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:multiplicarsites@gmail.com">multiplicarsites@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+     <div class="footer-bottom-bar">
+        <div class="container bottom-content">
+            <p class="copyright">
+                © 2026 Multiplicar Sites. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* =========================================
+   3. HERO SECTION (FAQ)
+   ========================================= */
+.main-content { padding-top: var(--header-height); flex-grow: 1; }
+
+.hero-section {
+    padding: 5rem 0;
+    background: #020617;
+    text-align: center;
+}
+
+.hero-tag {
+    display: block;
+    color: var(--indigo-600);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) { .hero-title { font-size: 3rem; } }
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--slate-600);
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}

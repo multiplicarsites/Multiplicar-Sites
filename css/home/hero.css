@@ -1,0 +1,136 @@
+/* ================= HERO SECTION ================= */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  background: var(--slate-950);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* ================= GRID OVERLAY ================= */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* ================= WRAPPER ================= */
+.hero-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= TEXTO ================= */
+.hero-text {
+  width: 50%;
+  padding-left: 3rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--amber-400),
+    var(--yellow-400),
+    var(--amber-500)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  color: var(--slate-400);
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ================= BOTÕES ================= */
+.hero-btns {
+  display: flex;
+  gap: 16px;
+}
+
+.botao {
+  color: black !important;
+  background: var(--amber-500);
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+}
+
+.botao:hover {
+  background: var(--grad-amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(245, 158, 11, 0.35);
+}
+
+/* ================= IMAGEM ================= */
+.hero-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 0.5rem;
+  transform: translateX(2rem);
+  margin-top: 6rem;
+}
+
+/* ================= FADE INFERIOR ================= */
+.hero-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  pointer-events: none;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+  .hero-wrapper {
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-image {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+  }
+
+  .hero-image img {
+    transform: none;
+  }
+}

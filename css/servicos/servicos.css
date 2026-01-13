@@ -1,0 +1,53 @@
+/* --- VARIÁVEIS GLOBAIS --- */
+
+
+@import "../global/cores.css";
+@import "../global/fonte.css";
+@import "../global/footer.css";
+@import "../global/navbar.css";
+@import "../servicos/gratuito.css";
+@import "./hero.css";
+@import "./justificativas.css";
+@import "./opcoes.css";
+@import "./planomes.css";
+@import "./planos.css";
+@import "./servicos.css";
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {  color: rgb(235, 232, 232); line-height: 1.6; background-color: #020617;}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.text-center { text-align: center; }
+
+
+/* --- SEÇÕES --- */
+.section-white { padding: 80px 0;  }
+.section-gray { padding: 80px 0; }
+.header-center { margin-bottom: 50px; }
+h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
+
+
+
+
+
+/* --- ANIMAÇÕES --- */
+.reveal { opacity: 0; transform: translateY(20px); animation: in 0.6s forwards; }
+@keyframes in { to { opacity: 1; transform: translateY(0); } }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.reveal-scroll { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.reveal-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+/* --- MOBILE --- */
+.mobile-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+@media (max-width: 768px) {
+    .nav-desktop { display: none; }
+    .mobile-menu-toggle { display: block; }
+    h1 { font-size: 2.5rem; }
+    .price-card.featured { transform: scale(1); }
+}
+
+/* Adicione isso ao final do seu arquivo CSS */
+body, main, .services-layout-sticky {
+    overflow: visible !important;
+}

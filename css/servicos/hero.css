@@ -1,0 +1,26 @@
+/* --- HERO SERVIÇOS --- */
+.serv-hero { 
+    padding: 140px 0 80px; 
+}
+
+.tag { 
+    color: var(--amber-600); 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+.titulooo { 
+    font-size: 5.5rem; 
+    line-height: 1.1; 
+    margin-bottom: 20px;
+    color: white; 
+}
+
+.text-gradient { 
+    background: linear-gradient(to right, var(--amber-500), #ca8a04); 
+    background-clip: text; 
+    color: transparent; 
+}

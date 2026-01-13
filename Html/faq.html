@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - WebStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../css/FAQ/faq.css">
+</head>
+<body>
+
+     <header id="main-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">:0</div>
+                <span>Multiplicar sites</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html">Home</a>
+                <a href="servicos.html" class="active">Serviços</a>
+                <a href="sobre.html">Sobre nós</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html" class="btn-cta-small">Fale conosco</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuBtn"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        
+        <section class="hero-section">
+            <div class="container hero-container">
+                <h1 class="hero-title fade-in-up delay-1">
+                    Perguntas <span class="text-gradient-indigo">Frequentes</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up delay-2">
+                    Encontre respostas para as dúvidas mais comuns sobre nossos serviços.
+                </p>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-wrapper" id="category-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="processo">Processo</button>
+                    <button class="filter-btn" data-filter="pagamento">Pagamento</button>
+                    <button class="filter-btn" data-filter="prazo">Prazos</button>
+                    <button class="filter-btn" data-filter="suporte">Suporte</button>
+                    <button class="filter-btn" data-filter="seguranca">Segurança</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-list-section">
+            <div class="container max-w-3xl" id="faq-container">
+                <div class="faq-item" data-category="processo">
+                    <button class="faq-question">
+                        <span>Como funciona o processo de criação do site?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Nosso processo é dividido em 5 etapas: 1) Briefing inicial para entender suas necessidades; 2) Proposta comercial e contrato; 3) Criação do design e aprovação; 4) Desenvolvimento e programação; 5) Testes, ajustes e lançamento. Você acompanha tudo em tempo real através do nosso portal de projetos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="processo">
+                    <button class="faq-question">
+                        <span>O que preciso fornecer para iniciar o projeto?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Basicamente: logotipo em alta resolução, textos e conteúdos que deseja incluir (podemos ajudar a criar), fotos da empresa/produtos, e acesso ao domínio e hospedagem (caso já tenha). Se não tiver algum desses itens, podemos orientar na obtenção.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="processo">
+                    <button class="faq-question">
+                        <span>Quantas revisões estão incluídas?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Depende do pacote escolhido. Landing Pages incluem 2 revisões, Sites Institucionais incluem revisões ilimitadas até sua aprovação final. Revisões são alterações no layout, cores, posicionamento de elementos, etc.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pagamento">
+                    <button class="faq-question">
+                        <span>Quais são as formas de pagamento?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Aceitamos PIX, transferência bancária, cartão de crédito (em até 12x) e boleto. O pagamento é dividido: 50% na assinatura do contrato e 50% na entrega do projeto aprovado.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pagamento">
+                    <button class="faq-question">
+                        <span>Existe algum custo mensal ou de manutenção?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            O valor do projeto é único. Custos mensais existem apenas para: hospedagem (a partir de R$ 29/mês) e manutenção (opcional, R$ 297/mês). A manutenção inclui backups, atualizações de segurança e suporte prioritário.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pagamento">
+                    <button class="faq-question">
+                        <span>Emitem nota fiscal?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim! Emitimos nota fiscal eletrônica para todos os nossos serviços. A nota é enviada por e-mail após a confirmação do pagamento.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="prazo">
+                    <button class="faq-question">
+                        <span>Qual é o prazo de entrega?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Landing Pages: 7 dias úteis. Sites Institucionais: 15-20 dias úteis. E-commerce: 30-45 dias úteis. Sistemas Web: variável conforme complexidade. Os prazos contam a partir da aprovação do briefing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="prazo">
+                    <button class="faq-question">
+                        <span>É possível acelerar o prazo?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim, oferecemos opção de entrega expressa com acréscimo de 30% no valor. Consulte disponibilidade.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="prazo">
+                    <button class="faq-question">
+                        <span>O que acontece se o prazo não for cumprido?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Se por nossa responsabilidade o prazo não for cumprido, você recebe 20% de desconto no valor total. Atrasos por demora do cliente na aprovação ou envio de materiais não contam.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="suporte">
+                    <button class="faq-question">
+                        <span>Vocês oferecem treinamento para usar o site?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim! Todos os projetos com painel administrativo incluem treinamento gratuito via videoconferência. Também fornecemos documentação escrita e vídeos tutoriais.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="suporte">
+                    <button class="faq-question">
+                        <span>E depois do lançamento, como funciona o suporte?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Oferecemos 6 meses de suporte técnico gratuito após o lançamento. Isso inclui correção de bugs, pequenos ajustes e dúvidas de uso. Após esse período, você pode contratar nosso plano de manutenção.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="suporte">
+                    <button class="faq-question">
+                        <span>Qual é o tempo de resposta do suporte?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Respondemos em até 24 horas úteis por e-mail. Clientes com plano de manutenção têm suporte prioritário com resposta em até 4 horas via WhatsApp.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="seguranca">
+                    <button class="faq-question">
+                        <span>O site terá certificado SSL?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sim! Todos os nossos sites incluem certificado SSL gratuito, garantindo conexão segura (cadeado verde) e melhor posicionamento no Google.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="seguranca">
+                    <button class="faq-question">
+                        <span>Como vocês protegem o site contra ataques?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Implementamos várias camadas de segurança: certificado SSL, firewall de aplicação web (WAF), proteção contra DDoS, sanitização de inputs, headers de segurança, e monitoramento 24/7 de vulnerabilidades.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="seguranca">
+                    <button class="faq-question">
+                        <span>Como funcionam os backups?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Para clientes com plano de manutenção, realizamos backups diários automáticos com retenção de 30 dias. Em caso de problemas, restauramos seu site em até 24 horas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="seguranca">
+                    <button class="faq-question">
+                        <span>O que acontece se meu site for hackeado?</span>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Clientes com plano de manutenção têm garantia de restauração gratuita em até 24 horas. Identificamos a vulnerabilidade, limpamos o malware e reforçamos a segurança.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+<div id="faq-end-trigger"></div>
+
+        <section class="contact-cta-section">
+            <div class="container text-center">
+                <div class="icon-bubble">
+                    <i data-lucide="message-circle"></i>
+                </div>
+                <h2 class="cta-title">Ainda tem dúvidas?</h2>
+                <p class="cta-text">Nossa equipe está pronta para ajudar. Entre em contato e responderemos rapidamente.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contato.html" class="btn btn-primary btn-indigo btn-lg">
+                        Falar com Especialista
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline btn-lg">
+                        <i data-lucide="message-circle"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+   <footer class="main-footer">
+
+    <hr class="full-line">
+
+    <div class="container footer-padding">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="Home" class="logo footer-logo">
+                    <div class="logo-icon">:0</div>
+                    <span>Multiplicar sites</span>
+                </a>
+                <p class="footer-description">
+                    Levamos o seu negócio para o mundo com sites rápidos, funcionais e feitos por pessoas que pensam como usuários.
+                </p>
+                
+            </div>
+
+            <div class="footer-nav">
+                <h3>Serviços</h3>
+                <ul>
+                    <li><a href="./servicos.html">Landing Pages</a></li>
+                    <li><a href="./servicos.html">Sites Institucionais</a></li>
+                    <li><a href="./servicos.html">Manutenção</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./sobre.html">Sobre Nós</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <ul>
+                  
+                    <li>
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+5511974962380">(11) 97496-2380</a>
+                    </li>
+                    <li>
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:multiplicarsites@gmail.com">multiplicarsites@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+     <div class="footer-bottom-bar">
+        <div class="container bottom-content">
+            <p class="copyright">
+                © 2026 Multiplicar Sites. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <script src="../js/faq.js"></script>
+</body>
+</html>

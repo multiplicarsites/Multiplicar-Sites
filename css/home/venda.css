@@ -1,0 +1,85 @@
+/* ================= CTA SECTION (FUNDO ESCURO) ================= */
+.cta {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+    /* Gradiente exato: from-slate-900 via-blue-900 to-slate-950 */
+    /* IMPORTANTE: Texto claro */
+    color: white;
+}
+
+.cta-blobs .blob-1 { background: rgba(255,255,255,0.1); 
+    top: 0; left: 25%;
+}
+
+.cta-blobs .blob-2 { background: rgba(255,255,255,0.05);
+     bottom: 0;
+      right: 25%; 
+}
+
+.cta h2 { color: white; 
+    font-size: clamp(1.875rem, 4vw, 3rem); 
+}
+
+.cta p { 
+    font-size: 1.160rem; color: var(--slate-300);
+     max-width: 42rem; 
+     margin: 0 auto 2.5rem; 
+}
+
+.cta-btns { display: flex;
+     flex-direction: column;
+      gap: 1rem; 
+      justify-content: center;
+       margin-bottom: 3rem; 
+}
+
+@media (min-width: 640px) { .cta-btns { flex-direction: row; } }
+
+.btn-amber {
+    background: var(--grad-amber);
+    color: var(--slate-900);
+    text-decoration: none; 
+    padding: 1.5rem 2rem; 
+    border-radius: 0.75rem; 
+    font-weight: 600; 
+    font-size: 1.125rem; 
+    display: flex; 
+    align-items: center;
+     gap: 8px; 
+     transition: all 0.3s;
+}
+
+.btn-amber:hover { background: var(--grad-amber-hover); transform: translateY(-2px);
+     box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.3); 
+}
+
+.btn-outline-white {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+     color: white; 
+     text-decoration: none; 
+     padding: 1.5rem 2rem; 
+     border-radius: 0.75rem; 
+     font-weight: 600; 
+     font-size: 1.125rem; 
+     transition: all 0.3s;
+}
+
+.btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); }
+
+.contact-info { display: flex;
+     flex-wrap: wrap; 
+     justify-content: center;
+      gap: 2rem; 
+      color:  white; 
+}
+
+.contact-info a { color: inherit; 
+    text-decoration: none; 
+    display: flex;
+     align-items: center; 
+     gap: 8px; 
+     transition: color 0.2s; 
+}
+
+.contact-info a:hover { color:var(--amber-400); }

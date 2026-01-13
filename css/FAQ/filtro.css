@@ -1,0 +1,39 @@
+/* =========================================
+   4. FILTERS
+   ========================================= */
+.filter-section {
+    padding: 2rem 0;
+    background: #020617;
+    border-bottom: 1px solid var(--slate-200);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 30;
+}
+
+
+.filter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.filter-btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    color: black !important; 
+    background: var(--amber-500);
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {  background: var(--grad-amber-hover); }
+
+.filter-btn.active {
+    background-color: white;
+    color: var(--white);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.25);
+}
