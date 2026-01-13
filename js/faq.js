@@ -6,131 +6,135 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // HEADER SCROLL LOGIC
+    // 2. LÓGICA DO ACORDEÃO (Accordion)
     // =========================================
-    const header = document.getElementById('main-header');
-    
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-
-    // =========================================
-    // MOBILE MENU LOGIC
-    // =========================================
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-
-    if (mobileMenuBtn && mobileMenuOverlay) {
-        function toggleMenu() {
-            const isOpen = mobileMenuOverlay.classList.contains('open');
-            if (isOpen) {
-                mobileMenuOverlay.classList.remove('open');
-            } else {
-                mobileMenuOverlay.classList.add('open');
-            }
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMenu);
-        
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) {
-                toggleMenu();
-            }
-        });
-    }
-
-    // =========================================
-    // FAQ FILTER LOGIC
-    // =========================================
-    const filterButtons = document.querySelectorAll('.filter-btn');
     const faqItems = document.querySelectorAll('.faq-item');
 
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-question');
+        const content = item.querySelector('.faq-answer');
 
-            const filterValue = btn.getAttribute('data-filter');
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
 
-            faqItems.forEach(item => {
-                item.classList.remove('fade-in');
-                
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.classList.remove('hidden');
-                    setTimeout(() => {
-                        item.classList.add('fade-in');
-                    }, 10);
-                } else {
-                    item.classList.add('hidden');
+            // Fecha outros itens (efeito sanfona único) - Opcional
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
                 }
             });
-        });
-    });
 
-    // =========================================
-    // ACCORDION LOGIC
-    // =========================================
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const parentItem = question.parentElement;
-            const isOpen = parentItem.classList.contains('active');
-            
-            // Fecha outros itens (Opcional, comente se quiser permitir múltiplos abertos)
-            document.querySelectorAll('.faq-item').forEach(item => {
+            // Abre ou fecha o atual
+            if (isActive) {
                 item.classList.remove('active');
-            });
-
-            if (!isOpen) {
-                parentItem.classList.add('active');
+                content.style.maxHeight = null;
+            } else {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         });
     });
 
     // =========================================
-    // SCROLL TO TOP
+    // 3. LÓGICA DE FILTRO DE CATEGORIAS
     // =========================================
-    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allItems = document.querySelectorAll('.faq-item');
 
-    if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 1. Remove classe ativa dos botões
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // 2. Adiciona ao clicado
+            btn.classList.add('active');
+
+            // 3. Pega o valor do filtro
+            const filterValue = btn.getAttribute('data-filter');
+
+            // 4. Filtra os itens
+            allItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.style.display = 'block';
+                    // Pequeno delay para permitir animação CSS (fade-in)
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
             });
+
+            // 5. Recalcula a posição do Stick (Correção do bug)
+            // Forçamos o navegador a verificar se o CTA entrou na tela agora que a lista diminuiu
+            setTimeout(checkStickyVisibility, 100);
         });
-    }
-    
+    });
+
 // =========================================
-// HIDE FILTER AFTER FAQ ENDS (FIXED)
-// =========================================
-const filterSection = document.querySelector('.filter-section');
-const faqSection = document.querySelector('.faq-list-section');
+    // 4. LÓGICA PARA ESCONDER O FILTRO STICKY (CORRIGIDO)
+    // =========================================
+    const filterSection = document.querySelector('.filter-section');
+    const ctaSection = document.querySelector('.contact-cta-section');
 
-if (filterSection && faqSection) {
-    const faqEndOffset = faqSection.offsetTop + faqSection.offsetHeight;
+    function checkStickyVisibility() {
+        if (!ctaSection || !filterSection) return;
 
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY + window.innerHeight * 0.3;
+        const ctaRect = ctaSection.getBoundingClientRect();
+        
+        // PONTO DE GATILHO:
+        // Queremos que o filtro suma quando o CTA estiver chegando perto do topo.
+        // 150px é uma margem de segurança (altura do filtro + um respiro).
+        const triggerPoint = 150; 
 
-        if (scrollPosition >= faqEndOffset) {
+        // Lógica Invertida:
+        // Se o topo do CTA for MENOR que 150px (ou seja, está subindo e passando pelo topo), ESCONDE.
+        if (ctaRect.top < triggerPoint) {
             filterSection.classList.add('filter-hidden');
         } else {
             filterSection.classList.remove('filter-hidden');
         }
+    }
+
+    // Adiciona o evento de scroll para checar constantemente
+    window.addEventListener('scroll', checkStickyVisibility);
+    
+    // Checa ao carregar a página também
+    checkStickyVisibility();
+    
+    // =========================================
+    // 5. MENU MOBILE & SCROLL
+    // =========================================
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 20);
     });
-}
 
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+        const toggleMenu = () => mobileMenu.classList.toggle('active');
+        menuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', toggleMenu));
+    }
 
+    // =========================================
+    // 6. ANIMAÇÕES SCROLL REVEAL
+    // =========================================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
-
-    });
+    document.querySelectorAll('.reveal-scroll').forEach(el => revealObserver.observe(el));
+});

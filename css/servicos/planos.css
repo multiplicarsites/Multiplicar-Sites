@@ -5,6 +5,7 @@
     gap: 25px; 
     margin-top: 40px; 
     align-items: stretch;
+    color: black;
 }
 
 /* --- CARD --- */
@@ -14,7 +15,7 @@
     padding: 30px; 
     border-radius: 20px; 
     position: relative; 
-    transition: 0.3s; 
+    transition: box-shadow 0.3s ease; 
     display: flex;
     flex-direction: column;
 }
@@ -24,11 +25,12 @@
     margin-top: auto;
 }
 
-/* CARD DESTACADO */
+/* CARD DESTACADO (SOBE DE VERDADE) */
 .price-card.featured { 
     border-color: var(--amber-500); 
     box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
-    transform: scale(1.05); 
+    margin-top: -2.8rem; /* ✅ FUNCIONA MESMO COM reveal-scroll */
+    z-index: 2;
 }
 
 /* TAG MAIS POPULAR */
@@ -56,14 +58,15 @@
     margin-bottom: 20px; 
 }
 
-.purple { background: var(--violet-600); }
-.blue { background: var(--indigo-600); }
+.purple { background: #020617; }
+.blue { background: #020617; }
 
 /* PREÇO */
 .p-amount { 
     font-size: 1.5rem; 
     font-weight: 800; 
     margin: 15px 0; 
+    color: black;
 }
 
 .p-amount span { 
@@ -76,6 +79,7 @@
 .p-list { 
     list-style: none; 
     margin-bottom: 30px; 
+    color: black;
 }
 
 .p-list li { 
@@ -103,9 +107,19 @@
     border-radius: 10px; 
 }
 
+.p-btn:hover {
+   transform: translateY(-2px);  
+}
+
 .p-btn-amber { 
-    background: var(--amber-500); 
-    color: white; 
+   color: black !important;
+  background: var(--amber-500);
+}
+
+.p-btn-amber:hover {
+      background: var(--grad-amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(245, 158, 11, 0.35);
 }
 
 /* RESPONSIVO */
@@ -115,11 +129,19 @@
     }
 
     .price-card.featured {
-        transform: none;
+        margin-top: 0;
     }
 }
 
-
+/* TEXTO DESTAQUE */
 .investir {
     color: var(--amber-500);
+}
+
+.pacote {
+    margin-bottom: 5.7rem;
+}
+
+.dinheiro {
+    margin-bottom: 0.200rem;
 }

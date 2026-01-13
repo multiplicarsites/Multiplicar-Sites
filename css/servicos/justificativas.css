@@ -16,8 +16,8 @@
 }
 
 .icon-red { 
-    color: var(--red-500); 
-    background: #fee2e2; 
+    color: black; 
+    background: black; 
     padding: 10px;
     border-radius: 10px; 
     height: fit-content; 
@@ -25,7 +25,7 @@
 
 .old-prob { 
     text-decoration: line-through; 
-    color: var(--red-500); 
+    color: black; 
     font-weight: 500; 
 }
 
@@ -33,7 +33,7 @@
     display: flex; 
     align-items: center; 
     gap: 5px; 
-    color: var(--emerald-500); 
+    color:  var(--amber-500); 
     font-weight: 600; 
 }
 

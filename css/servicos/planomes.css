@@ -62,3 +62,24 @@
     color: var(--emerald-500); 
 }
 
+.botao {
+  color: black !important;
+  background: var(--amber-500);
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+  margin-top: 2rem;
+}
+
+.botao:hover {
+  background: var(--grad-amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(245, 158, 11, 0.35);
+}

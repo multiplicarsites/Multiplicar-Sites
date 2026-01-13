@@ -1,15 +1,22 @@
 /* =========================================
-   4. FILTERS
+   4. FILTERS (STICKY BAR)
    ========================================= */
 .filter-section {
-    padding: 2rem 0;
-    background: #020617;
-    border-bottom: 1px solid var(--slate-200);
+    padding: 1.5rem 0; /* Reduzi um pouco para ficar mais elegante */
+    background: #020617; /* Garante fundo sólido igual ao body */
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5); /* Linha mais sutil */
+    
+    /* LÓGICA STICKY */
     position: sticky;
-    top: var(--header-height);
-    z-index: 30;
+    /* Ajuste fino: 80px é a altura padrão do header. 
+       Se seu header for menor, diminua este valor. */
+    top: 79px; 
+    z-index: 30; /* Fica acima do conteúdo, mas abaixo do header (que costuma ser 40 ou 50) */
+    
+    /* Truque para evitar a linha transparente: margem negativa de 1px */
+    margin-top: -1px; 
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 
 .filter-wrapper {
     display: flex;
@@ -21,19 +28,31 @@
 .filter-btn {
     padding: 0.625rem 1.25rem;
     border-radius: 0.75rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    border: none;
+    border: 1px solid rgba(255,255,255,0.1); /* Borda sutil */
     cursor: pointer;
-    color: black !important; 
-    background: var(--amber-500);
+    color: var(--slate-300);
+    background: rgba(30, 41, 59, 0.4); /* Fundo semi-transparente */
     transition: all 0.2s;
 }
 
-.filter-btn:hover {  background: var(--grad-amber-hover); }
+.filter-btn:hover { 
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
 
 .filter-btn.active {
-    background-color: white;
-    color: var(--white);
-    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.25);
+    background: var(--amber-500);
+    color: black;
+    border-color: var(--amber-500);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    font-weight: 600;
+}
+
+/* Estado escondido (controlado pelo JS) */
+.filter-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }

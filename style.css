@@ -1,14 +1,14 @@
 
 
-@import "../global/navbar.css";
-@import "../global/footer.css";
-@import "./venda.css";
-@import "./hero.css";
-@import "../global/fonte.css";
-@import "../global/cores.css";
-@import "./comentario.css";
-@import "./garantia.css";
-@import "./carrosel.css";
+@import "./css/global/navbar.css";
+@import "./css/global/footer.css";
+@import "./css/home/venda.css";
+@import "./css/home/hero.css";
+@import "./css/global/fonte.css";
+@import "./css/global/cores.css";
+@import "./css/home/comentario.css";
+@import "./css/home/garantia.css";
+@import "./css/home/carrosel.css";
 
 
 * {
