@@ -1,20 +1,8 @@
 /* --- VARIÁVEIS GLOBAIS --- */
-:root {
-    --bg-dark: #020617;
-    --text-white: #ffffff;
-    --text-slate-100: #f1f5f9;
-    --text-slate-300: #cbd5e1;
-    --text-slate-400: #94a3b8;
-    --text-slate-500: #64748b;
-    
-    --cyan-300: #67e8f9;
-    --cyan-400: #22d3ee;
-    --cyan-500: #06b6d4;
-    --sky-400: #38bdf8;
-    --sky-500: #0ea5e9;
-
-    --font-main: 'Inter', sans-serif;
-}
+@import "../global/cores.css";
+@import "../global/fonte.css";
+@import "../global/footer.css";
+@import "../global/navbar.css";
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {

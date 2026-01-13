@@ -9,6 +9,7 @@ header {
     transition: all 0.3s ease;
     background-color: transparent; /* Começa transparente */
     color: white;
+    font-family: 'Inter', sans-serif;
 }
 
 header.scrolled {

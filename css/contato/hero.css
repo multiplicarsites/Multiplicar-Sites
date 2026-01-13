@@ -1,0 +1,40 @@
+/* ================= HERO SECTION ================= */
+.hero-section {
+    padding: 160px 0 80px;
+    background: #020617;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.hero-wrapper { max-width: 768px; margin: 0 auto; }
+.hero-tag {
+    display: block; 
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem;
+    color: white;
+}
+.text-gradient-indigo {
+    background: linear-gradient(to right, var(--indigo-600), var(--violet-600));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-section p { font-size: 1.125rem; color: var(--slate-400); }
+
+/* Animation Classes */
+.reveal-element { opacity: 0; transform: translateY(20px); transition: 0.8s; }
+.reveal-element.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0s; }
+.delay-2 { transition-delay: 0.1s; }
+.delay-3 { transition-delay: 0.2s; }
+
+.subtitulo {
+    color: var(--slate-400);
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.dourado {
+    color: var(--amber-500);;
+}

@@ -24,3 +24,7 @@
     background-clip: text; 
     color: transparent; 
 }
+
+.subtitulo {
+    color: var(--slate-400);
+}

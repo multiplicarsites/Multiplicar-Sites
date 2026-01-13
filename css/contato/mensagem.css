@@ -1,0 +1,27 @@
+.resposta {
+    background: #020617;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 2rem;
+}
+
+.botao {
+  color: black !important;
+  background: var(--amber-500);
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+}
+
+.botao:hover {
+  background: var(--grad-amber-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(245, 158, 11, 0.35);
+}
