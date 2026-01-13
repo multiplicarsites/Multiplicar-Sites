@@ -144,7 +144,7 @@ header.scrolled .mobile-menu-toggle {
 }
 .mobile-menu a:hover { background: white; color: black; }
 
-h1 {
+.nome {
     font-size: 1.5rem !important;
     color: white !important;
 }

@@ -1,11 +1,13 @@
-/* --- PRICING CARDS --- */
+/* --- PRICING GRID --- */
 .price-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 25px; 
     margin-top: 40px; 
+    align-items: stretch;
 }
 
+/* --- CARD --- */
 .price-card { 
     background: white; 
     border: 2px solid var(--slate-200); 
@@ -13,24 +15,36 @@
     border-radius: 20px; 
     position: relative; 
     transition: 0.3s; 
+    display: flex;
+    flex-direction: column;
 }
 
+/* Faz o botão ficar sempre embaixo */
+.price-card .p-btn {
+    margin-top: auto;
+}
+
+/* CARD DESTACADO */
 .price-card.featured { 
     border-color: var(--amber-500); 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
     transform: scale(1.05); 
 }
 
+/* TAG MAIS POPULAR */
 .popular-tag { 
     position: absolute; 
-    top: 0; right: 0; 
+    top: 0; 
+    right: 0; 
     background: var(--amber-500); 
+    color: white;
     font-size: 0.7rem; 
     font-weight: 800; 
-    padding: 5px 12px; 
-    border-radius: 0 0 0 10px; 
+    padding: 6px 14px; 
+    border-radius: 0 18px 0 12px; 
 }
 
+/* ÍCONE */
 .p-icon-box { 
     width: 50px; 
     height: 50px; 
@@ -42,14 +56,10 @@
     margin-bottom: 20px; 
 }
 
-.purple { 
-    background: var(--violet-600); 
-}
+.purple { background: var(--violet-600); }
+.blue { background: var(--indigo-600); }
 
-.blue { 
-    background: var(--indigo-600); 
-}
-
+/* PREÇO */
 .p-amount { 
     font-size: 1.5rem; 
     font-weight: 800; 
@@ -62,6 +72,7 @@
     font-weight: 400; 
 }
 
+/* LISTA */
 .p-list { 
     list-style: none; 
     margin-bottom: 30px; 
@@ -80,6 +91,7 @@
     width: 16px; 
 }
 
+/* BOTÃO */
 .p-btn { 
     display: block; 
     text-align: center;
@@ -94,4 +106,20 @@
 .p-btn-amber { 
     background: var(--amber-500); 
     color: white; 
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card.featured {
+        transform: none;
+    }
+}
+
+
+.investir {
+    color: var(--amber-500);
 }
